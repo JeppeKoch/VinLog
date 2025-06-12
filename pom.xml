@@ -32,11 +32,7 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>com.github.Hartmannsolution</groupId>
-            <artifactId>TokenSecurity</artifactId>
-            <version>${token.security.version}</version>
-        </dependency>
+
 
         <dependency>
             <groupId>org.mindrot</groupId>

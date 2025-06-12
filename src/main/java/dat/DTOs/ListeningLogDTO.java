@@ -1,4 +1,6 @@
 package dat.DTOs;
+
+import java.time.LocalDateTime;
 import jakarta.persistence.*;
 import lombok.*;
 /**
@@ -10,10 +12,9 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AlbumDTO {
+public class ListeningLogDTO {
     private Long id;
-    private String title;
-    private Integer releaseYear;
-    private String coverUrl;
-    private Long artistId;
+    private Long userId;
+    private Long trackId;
+    private LocalDateTime listenedAt;
 }

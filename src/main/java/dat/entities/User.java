@@ -1,4 +1,5 @@
 package dat.entities;
+import dat.DTOs.UserDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -43,9 +44,18 @@ public class User {
         this.email = email;
     }
 
+    public User(UserDTO userDTO) {
+        this.id = userDTO.getId();
+        this.username = userDTO.getUsername();
+        this.password = userDTO.getPassword();
+        this.email = userDTO.getEmail();
+    }
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Rating> ratings = new HashSet<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ListeningLog> listeningLogs = new HashSet<>();
+
+
 }

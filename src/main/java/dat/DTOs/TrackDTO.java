@@ -10,10 +10,10 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AlbumDTO {
+public class TrackDTO {
     private Long id;
     private String title;
-    private Integer releaseYear;
-    private String coverUrl;
-    private Long artistId;
+    private Integer duration;
+    private Integer trackNumber;
+    private Long albumId;
 }
