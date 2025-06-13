@@ -1,4 +1,5 @@
 package dat.entities;
+import dat.DTOs.AlbumDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -36,4 +37,15 @@ public class Album {
 
     @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Rating> ratings = new HashSet<>();
+
+
+    public Album(AlbumDTO albumDTO) {
+        this.id = albumDTO.getId();
+        this.title = albumDTO.getTitle();
+        this.releaseYear = albumDTO.getReleaseYear();
+        this.coverUrl = albumDTO.getCoverUrl();
+        if (albumDTO.getArtistId() != null) {
+            this.artist = new Artist(albumDTO.getArtistId());
+        }
+    }
 }

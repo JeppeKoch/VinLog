@@ -1,5 +1,6 @@
 package dat.entities;
 
+import dat.DTOs.ArtistDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -38,8 +39,20 @@ public class Artist {
         this.country = country;
     }
 
+    public Artist(ArtistDTO artistDTO) {
+        this.id = artistDTO.getId();
+        this.name = artistDTO.getName();
+        this.country = artistDTO.getCountry();
+    }
+
+    public Artist(Long artistId) {
+        this.id = artistId;
+    }
+
     public void addAlbum(Album album) {
         albums.add(album);
         album.setArtist(this);
     }
+
+
 }
